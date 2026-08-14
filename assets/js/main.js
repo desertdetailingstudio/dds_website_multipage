@@ -1,8 +1,12 @@
 
 function toggleMenu() {
   const navMenu = document.getElementById('nav-menu');
+  const hamburger = document.getElementById('hamburger');
   if (navMenu) {
-    navMenu.classList.toggle('open');
+    const isOpen = navMenu.classList.toggle('open');
+    if (hamburger) {
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+    }
   }
 }
 
